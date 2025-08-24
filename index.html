@@ -1,71 +1,533 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wartungsarbeiten</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f8f9fa;
-            padding: 50px;
-        }
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elektrofaser – Elektroinstallation &amp; Glasfaser in Darmstadt, Hessen</title>
+  <meta name="description"
+    content="Elektroinstallation, Netzwerktechnik, Beleuchtung, Glasfaser‑Einblasen &amp; ‑Spleißen, Prüfungen. Region Darmstadt (bis 100 km). Kontakt aufnehmen." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #ffffff;
+      --card: #ffffff;
+      --text: #0b1220;
+      --muted: #6b7280;
+      --border: #e5e7eb;
+      --accent: #0ea5e9;
+      --shadow: 0 10px 25px rgba(17, 24, 39, .08);
+      --maxw: 1120px;
+      --radius: 16px;
+      --space: clamp(.75rem, 1vw, 1rem);
+      --space-lg: clamp(1.25rem, 2vw, 1.75rem);
+      --space-xl: clamp(2rem, 5vw, 4.5rem);
+    }
 
-        .container {
-            max-width: 600px;
-            margin: auto;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0b1220;
+        --card: #0f172a;
+        --text: #e5e7eb;
+        --muted: #9aa4b2;
+        --border: #1f2937;
+        --shadow: 0 8px 30px rgba(0, 0, 0, .35);
+      }
+    }
 
-        .logo {
-            max-width: 200px;
-            margin-bottom: 20px;
-        }
+    [data-theme="dark"] {
+      --bg: #0b1220;
+      --card: #0f172a;
+      --text: #e5e7eb;
+      --muted: #9aa4b2;
+      --border: #1f2937;
+      --shadow: 0 8px 30px rgba(0, 0, 0, .35);
+    }
 
-        h1 {
-            color: #dc3545;
-        }
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
 
-        p {
-            font-size: 18px;
-            color: #333;
-        }
+    html {
+      scroll-behavior: smooth;
+      max-width: 100%;
+      overflow-x: hidden;
+    }
 
-        .loader {
-            border: 5px solid #f3f3f3;
-            border-top: 5px solid #dc3545;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
-            margin: 20px auto;
-        }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      max-width: 100%;
+      overflow-x: hidden;
+    }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
 
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-    </style>
+    .container {
+      width: min(100% - 2rem, var(--maxw));
+      margin-inline: auto;
+    }
+
+    section {
+      padding: var(--space-xl) 0;
+    }
+
+    h1,
+    h2 {
+      line-height: 1.15;
+    }
+
+    h1 {
+      font-size: clamp(2rem, 3.6vw, 3.2rem);
+      margin: 0 0 .5rem;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
+      margin: 0 0 .75rem;
+    }
+
+    p {
+      color: var(--muted);
+    }
+
+    .btn {
+      display: inline-block;
+      padding: .8rem 1.1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      transition: transform .15s, background .2s, color .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      border-color: transparent;
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: inherit;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      backdrop-filter: saturate(120%) blur(8px);
+      background: color-mix(in oklab, var(--bg) 92%, transparent);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .5rem;
+      padding: .6rem 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      text-decoration: none;
+      color: inherit;
+      font-weight: 800;
+    }
+
+    .brand svg {
+      width: 38px;
+      height: 38px;
+      border-radius: 10px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: .25rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      padding: .55rem .85rem;
+      border-radius: 999px;
+      color: var(--muted);
+    }
+
+    .nav-links a.active,
+    .nav-links a:hover {
+      color: var(--text);
+      background: var(--card);
+      box-shadow: var(--shadow);
+    }
+
+    .theme-toggle {
+      display: inline-grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      width: 42px;
+      height: 42px;
+      background: var(--card);
+    }
+
+    .hamburger {
+      display: none;
+      background: var(--card);
+      border: 1px solid var(--border);
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+    }
+
+    .hamburger svg {
+      width: 22px;
+      height: 22px;
+    }
+
+    .mobile {
+      display: none;
+      padding: .5rem 0 1rem;
+    }
+
+    .mobile a {
+      display: block;
+      padding: .7rem .8rem;
+      border-radius: 12px;
+      text-decoration: none;
+    }
+
+    /* show hamburger on small screens; hide inline nav */
+    @media (max-width: 900px) {
+      .nav-links {
+        display: none;
+      }
+
+      .hamburger {
+        display: inline-grid;
+        place-items: center;
+      }
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: var(--space-lg);
+      align-items: center;
+      padding: var(--space-xl) 0 var(--space-lg);
+    }
+
+    .card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--card);
+      padding: var(--space-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .ticker {
+      display: flex;
+      gap: .4rem;
+      flex-wrap: wrap;
+      margin-top: .75rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .ticker span {
+      opacity: .15;
+      transition: opacity .35s;
+    }
+
+    .ticker span.is-active {
+      opacity: 1;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space);
+    }
+
+    @media (max-width:960px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: var(--space);
+      align-items: start;
+    }
+
+    @media (max-width:960px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity .35s, transform .35s;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: none;
+    }
+
+    .visually-hidden {
+      position: absolute !important;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip: rect(1px, 1px, 1px, 1px);
+      white-space: nowrap;
+    }
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <img src="assets/logo/Logo1-NB.png" alt="Logo" class="logo">
-        <h1>Wartungsarbeiten</h1>
-        <p>Unsere Website wird gerade gewartet. Bitte haben Sie etwas Geduld. Wir sind bald wieder online!</p>
-        <div class="loader"></div>
-        <p>Vielen Dank für Ihr Verständnis.</p>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="brand" aria-label="Elektrofaser Home">
+        <svg viewBox="0 0 48 48" class="logo" aria-hidden="true">
+          <rect width="48" height="48" rx="10" ry="10" fill="#0ea5e9" />
+          <path d="M11 28l9-16 3 8h14L26 37l-3-9H11z" fill="#fff" />
+        </svg>
+        <span>Elektrofaser</span>
+      </a>
+      <nav aria-label="Primary">
+        <div class="nav-links" role="menubar">
+          <a role="menuitem" class="active" href="#home">Home</a>
+          <a role="menuitem" href="#services">Leistungen</a>
+          <a role="menuitem" href="#about">Über uns</a>
+          <a role="menuitem" href="#contact">Kontakt</a>
+        </div>
+      </nav>
+      <div style="display:flex; gap:.4rem; align-items:center;">
+        <button id="themeToggle" class="theme-toggle" aria-label="Toggle Dark Mode" title="Theme">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path
+              d="M12 3v2m0 14v2M21 12h-2M5 12H3m14.95 4.95-1.41-1.41M7.46 7.46 6.05 6.05m11.31 0-1.41 1.41M7.46 16.54 6.05 17.95" />
+            <circle cx="12" cy="12" r="4" />
+          </svg>
+        </button>
+        <button id="hamburger" class="hamburger" aria-label="Open menu" aria-controls="mobile-menu"
+          aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+      </div>
     </div>
+    <div id="mobile-menu" class="container mobile" hidden>
+      <a href="#home" data-close>Home</a>
+      <a href="#about" data-close>Über uns</a>
+      <a href="#contact" data-close>Kontakt</a>
+    </div>
+  </header>
+
+  <main id="home" class="container hero">
+    <div>
+      <h1 class="reveal">Elektrofaser</h1>
+      <p class="reveal" style="transition-delay:.05s">Elektro‑ &amp; Glasfaser‑Dienstleistungen für Darmstadt und Hessen
+        (bis 100 km) – zuverlässig &amp; termintreu.</p>
+      <div class="ticker reveal" aria-label="Leistungen" style="transition-delay:.1s">
+        <span class="is-active">Elektroinstallation</span>
+        <span>Netzwerktechnik</span>
+        <span>Beleuchtungssysteme</span>
+        <span>Glasfaser‑Einblasen</span>
+        <span>Glasfaser‑Spleißen</span>
+        <span>APL‑Montage</span>
+        <span>NVT‑Einrichtung</span>
+        <span>Glasfaser‑Fehlersuche</span>
+        <span>Gleichrichter‑Prüfung</span>
+        <span>Elektrogeräte‑Prüfung</span>
+      </div>
+      <div style="margin-top:1rem; display:flex; gap:.6rem; flex-wrap:wrap;" class="reveal"
+        style="transition-delay:.15s">
+        <a class="btn btn-primary" href="#contact">Kontakt aufnehmen</a>
+        <a class="btn btn-ghost" href="#services">Leistungen &amp; Info</a>
+      </div>
+    </div>
+    <!-- <div class="card reveal" style="transition-delay:.1s">
+      <img alt="Dekoratives Platzhalterbild" width="600" height="800" decoding="async" fetchpriority="low"
+        src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='600' height='800' viewBox='0 0 600 800'><rect width='600' height='800' fill='%23f5f7fa'/><rect y='710' width='600' height='90' fill='%230ea5e9'/><text x='50%' y='47%' dominant-baseline='middle' text-anchor='middle' font-family='Inter,Segoe UI,Arial' font-size='36' fill='%23141c26'>Elektrofaser</text><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='Inter,Segoe UI,Arial' font-size='18' fill='%2364707d'>Placeholder 3:4</text></svg>"
+        sizes="(min-width: 960px) 40vw, 100vw" />
+    </div> -->
+  </main>
+
+  <!-- NOTE: Services section intentionally removed as requested -->
+
+  <section id="services" class="container" style="height:80vh;">
+    <h2 class="reveal">Leistungen</h2>
+
+  </section>
+
+
+  <section id="about" class="container">
+    <h2 class="reveal">Über uns</h2>
+    <div class="about-grid">
+      <div class="card reveal">
+        <p>Elektrofaser liefert professionelle Elektro‑ und Glasfaserlösungen für Privat und Gewerbe in Darmstadt und
+          Umgebung. Wir kombinieren saubere Ausführung, verlässliche Termine und klare Kommunikation – von der
+          Installation über Netzwerktechnik bis zur Fehlersuche. Schnell, präzise, dokumentiert.</p>
+      </div>
+      <div class="card reveal" style="transition-delay:.05s">
+        <ul style="margin:0; padding-left:1.1rem; line-height:1.8;">
+          <li>Zertifizierte Prüfungen &amp; Messprotokolle</li>
+          <li>Pünktliche Ausführung, sauberer Abschluss</li>
+          <li>Ein Ansprechpartner von Planung bis Abnahme</li>
+          <li>Einsätze in Darmstadt + bis <strong>100 km</strong></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="container">
+    <h2>Kontakt</h2>
+    <div class="contact-grid">
+      <div class="card">
+        <div style="display:grid; gap:.75rem;">
+          <p><strong>Verantwortlich:</strong> Dipl. Ing. Ismail Cicek</p>
+          <p style="margin:0; display:flex; align-items:center; gap:.55rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 10c0 7-9 12-9 12S3 17 3 10a9 9 0 1 1 18 0Z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            Rheinstr. 13, 64673 Zwingenberg
+          </p>
+          <p style="margin:0; display:flex; align-items:center; gap:.55rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M22 16.92V19a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.07 12.81 19.8 19.8 0 0 1 0 4.18 2 2 0 0 1 2 2h2.09a2 2 0  1 0 2 1.72c.12.89.3 1.76.57 2.6a2 2 0 0 1-.45 2.11L5.1 9.91a16 16 0 0 0 9 9l1.48-1.11a2 2 0 0 1 2.11-.45c.84.27 1.71.45 2.6.57A2 2 0 0 1 22 16.92Z" />
+            </svg>
+            <a class="btn btn-ghost" href="tel:+491739389359">0173 938 93 59</a>
+          </p>
+          <p style="margin:0; display:flex; align-items:center; gap:.55rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path
+                d="M21.6 12.6c0-5.3-4.3-9.6-9.6-9.6S2.4 7.3 2.4 12.6C2.4 17 5.6 20.8 9.8 21.9v-3.2H8v-2h1.8v-1.6c0-1.8 1-2.8 2.6-2.8.8 0 1.6.1 1.6.1v1.8h-.9c-.9 0-1.2.6-1.2 1.1v1.4H14l-.3 2H12v3.2c4.2-1.1 7.4-4.9 7.4-9.3Z" />
+            </svg>
+            <a class="btn btn-ghost" href="https://wa.me/491739389359" target="_blank" rel="noopener">WhatsApp</a>
+          </p>
+          <p style="margin:0; display:flex; align-items:center; gap:.55rem;">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M4 4h16v16H4z" />
+              <path d="m22 6-10 7L2 6" />
+            </svg>
+            <a class="btn btn-ghost" href="mailto:info@elektrofaser.de">info@elektrofaser.de</a>
+          </p>
+        </div>
+      </div>
+      <div class="card">
+        <div class="visually-hidden" id="mapdesc">Karte: Rheinstr. 13, 64673 Zwingenberg</div>
+        <iframe title="Google Maps – Rheinstr. 13, 64673 Zwingenberg" aria-describedby="mapdesc"
+          src="https://www.google.com/maps?q=Rheinstr.+13,+64673+Zwingenberg&output=embed" width="100%" height="320"
+          style="border:0; border-radius:12px;" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <footer class="container" style="padding: var(--space-lg) 0 2.5rem; color: var(--muted)">
+    <div class="card" style="display:flex; align-items:center; justify-content:space-between; gap:.5rem;">
+      <small>© <span id="year"></span> Elektrofaser — Alle Rechte vorbehalten.</small>
+      <div style="display:flex; gap:.5rem;">
+        <a class="btn btn-ghost" href="#home">Nach oben</a>
+        <!-- <a class="btn btn-ghost" href="#" aria-disabled="true">Datenschutz</a>
+        <a class="btn btn-ghost" href="#" aria-disabled="true">Impressum</a> -->
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Theme toggle
+    const themeBtn = document.getElementById('themeToggle');
+    const setTheme = (mode) => { if (mode === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); } else { document.documentElement.removeAttribute('data-theme'); } localStorage.setItem('theme', mode); };
+    const stored = localStorage.getItem('theme'); if (stored) setTheme(stored);
+    themeBtn.addEventListener('click', () => { const dark = document.documentElement.getAttribute('data-theme') === 'dark'; setTheme(dark ? 'light' : 'dark'); });
+
+    // Mobile menu
+    const burger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    burger.addEventListener('click', () => {
+      const open = !mobileMenu.hasAttribute('hidden');
+      if (open) { mobileMenu.setAttribute('hidden', ''); burger.setAttribute('aria-expanded', 'false'); }
+      else { mobileMenu.removeAttribute('hidden'); burger.setAttribute('aria-expanded', 'true'); }
+    });
+    mobileMenu.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', () => {
+      mobileMenu.setAttribute('hidden', ''); burger.setAttribute('aria-expanded', 'false');
+    }));
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.hasAttribute('hidden')) {
+        mobileMenu.setAttribute('hidden', ''); burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    // Scrollspy (safe if a section is missing)
+    const links = Array.from(document.querySelectorAll('.nav-links a'));
+    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          links.forEach(l => l.classList.remove('active'));
+          const idx = sections.indexOf(entry.target);
+          if (links[idx]) links[idx].classList.add('active');
+        }
+      });
+    }, { rootMargin: '-55% 0px -40% 0px', threshold: 0 });
+    sections.forEach(s => s && spy.observe(s));
+
+    // Reveal on scroll
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObs.unobserve(e.target); } });
+    }, { threshold: .1 });
+    reveals.forEach(el => revealObs.observe(el));
+
+    // Ticker (reduced-motion aware)
+    (function () {
+      const items = Array.from(document.querySelectorAll('.ticker span'));
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (reduce || items.length === 0) return;
+      let i = 0; setInterval(() => { items[i].classList.remove('is-active'); i = (i + 1) % items.length; items[i].classList.add('is-active'); }, 1600);
+    })();
+  </script>
 </body>
 
 </html>
