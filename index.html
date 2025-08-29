@@ -6,308 +6,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Elektrofaser – Elektroinstallation &amp; Glasfaser in Darmstadt, Hessen</title>
   <meta name="description"
-    content="Elektroinstallation, Netzwerktechnik, Beleuchtung, Glasfaser‑Einblasen &amp; ‑Spleißen, Prüfungen. Region Darmstadt (bis 100 km). Kontakt aufnehmen." />
+    content="Elektroinstallation, Netzwerktechnik, Beleuchtung, Glasfaser-Einblasen &amp; -Spleißen, Prüfungen. Region Darmstadt (bis 100 km). Kontakt aufnehmen." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #ffffff;
-      --card: #ffffff;
-      --text: #0b1220;
-      --muted: #6b7280;
-      --border: #e5e7eb;
-      --accent: #0ea5e9;
-      --shadow: 0 10px 25px rgba(17, 24, 39, .08);
-      --maxw: 1120px;
-      --radius: 16px;
-      --space: clamp(.75rem, 1vw, 1rem);
-      --space-lg: clamp(1.25rem, 2vw, 1.75rem);
-      --space-xl: clamp(2rem, 5vw, 4.5rem);
-    }
-
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #0b1220;
-        --card: #0f172a;
-        --text: #e5e7eb;
-        --muted: #9aa4b2;
-        --border: #1f2937;
-        --shadow: 0 8px 30px rgba(0, 0, 0, .35);
-      }
-    }
-
-    [data-theme="dark"] {
-      --bg: #0b1220;
-      --card: #0f172a;
-      --text: #e5e7eb;
-      --muted: #9aa4b2;
-      --border: #1f2937;
-      --shadow: 0 8px 30px rgba(0, 0, 0, .35);
-    }
-
-    *,
-    *::before,
-    *::after {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
-    body {
-      margin: 0;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .container {
-      width: min(100% - 2rem, var(--maxw));
-      margin-inline: auto;
-    }
-
-    section {
-      padding: var(--space-xl) 0;
-    }
-
-    h1,
-    h2 {
-      line-height: 1.15;
-    }
-
-    h1 {
-      font-size: clamp(2rem, 3.6vw, 3.2rem);
-      margin: 0 0 .5rem;
-    }
-
-    h2 {
-      font-size: clamp(1.6rem, 2.6vw, 2.2rem);
-      margin: 0 0 .75rem;
-    }
-
-    p {
-      color: var(--muted);
-    }
-
-    .btn {
-      display: inline-block;
-      padding: .8rem 1.1rem;
-      border-radius: 999px;
-      text-decoration: none;
-      font-weight: 700;
-      border: 1px solid var(--border);
-      transition: transform .15s, background .2s, color .2s;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #fff;
-      border-color: transparent;
-    }
-
-    .btn-ghost {
-      background: transparent;
-      color: inherit;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: saturate(120%) blur(8px);
-      background: color-mix(in oklab, var(--bg) 92%, transparent);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: .5rem;
-      padding: .6rem 0;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: .6rem;
-      text-decoration: none;
-      color: inherit;
-      font-weight: 800;
-    }
-
-    .brand svg {
-      width: 38px;
-      height: 38px;
-      border-radius: 10px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: .25rem;
-      align-items: center;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      padding: .55rem .85rem;
-      border-radius: 999px;
-      color: var(--muted);
-    }
-
-    .nav-links a.active,
-    .nav-links a:hover {
-      color: var(--text);
-      background: var(--card);
-      box-shadow: var(--shadow);
-    }
-
-    .theme-toggle {
-      display: inline-grid;
-      place-items: center;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      width: 42px;
-      height: 42px;
-      background: var(--card);
-    }
-
-    .hamburger {
-      display: none;
-      background: var(--card);
-      border: 1px solid var(--border);
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-    }
-
-    .hamburger svg {
-      width: 22px;
-      height: 22px;
-    }
-
-    .mobile {
-      display: none;
-      padding: .5rem 0 1rem;
-    }
-
-    .mobile a {
-      display: block;
-      padding: .7rem .8rem;
-      border-radius: 12px;
-      text-decoration: none;
-    }
-
-    /* show hamburger on small screens; hide inline nav */
-    @media (max-width: 900px) {
-      .nav-links {
-        display: none;
-      }
-
-      .hamburger {
-        display: inline-grid;
-        place-items: center;
-      }
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: var(--space-lg);
-      align-items: center;
-      padding: var(--space-xl) 0 var(--space-lg);
-    }
-
-    .card {
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      background: var(--card);
-      padding: var(--space-lg);
-      box-shadow: var(--shadow);
-    }
-
-    .ticker {
-      display: flex;
-      gap: .4rem;
-      flex-wrap: wrap;
-      margin-top: .75rem;
-      font-weight: 600;
-      color: var(--text);
-    }
-
-    .ticker span {
-      opacity: .15;
-      transition: opacity .35s;
-    }
-
-    .ticker span.is-active {
-      opacity: 1;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: var(--space);
-    }
-
-    @media (max-width:960px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: var(--space);
-      align-items: start;
-    }
-
-    @media (max-width:960px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(10px);
-      transition: opacity .35s, transform .35s;
-    }
-
-    .reveal.is-visible {
-      opacity: 1;
-      transform: none;
-    }
-
-    .visually-hidden {
-      position: absolute !important;
-      height: 1px;
-      width: 1px;
-      overflow: hidden;
-      clip: rect(1px, 1px, 1px, 1px);
-      white-space: nowrap;
-    }
-  </style>
+  <link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
@@ -361,7 +63,7 @@
       <p class="reveal" style="transition-delay:.05s">Elektro‑ &amp; Glasfaser‑Dienstleistungen für Darmstadt und Hessen
         (bis 100 km) – zuverlässig &amp; termintreu.</p>
       <div class="ticker reveal" aria-label="Leistungen" style="transition-delay:.1s">
-        <span class="is-active">Elektroinstallation</span>
+        <!-- <span class="is-active">Elektroinstallation</span>
         <span>Netzwerktechnik</span>
         <span>Beleuchtungssysteme</span>
         <span>Glasfaser‑Einblasen</span>
@@ -370,7 +72,7 @@
         <span>NVT‑Einrichtung</span>
         <span>Glasfaser‑Fehlersuche</span>
         <span>Gleichrichter‑Prüfung</span>
-        <span>Elektrogeräte‑Prüfung</span>
+        <span>Elektrogeräte‑Prüfung</span> -->
       </div>
       <div style="margin-top:1rem; display:flex; gap:.6rem; flex-wrap:wrap;" class="reveal"
         style="transition-delay:.15s">
@@ -387,10 +89,94 @@
 
   <!-- NOTE: Services section intentionally removed as requested -->
 
-  <section id="services" class="container" style="height:80vh;">
+  <section id="services" class="container">
     <h2 class="reveal">Leistungen</h2>
+    <div class="services-grid">
 
+      <div class="service-card reveal">
+        <div class="service-image">
+          <img src="demo.png" alt="Elektroinstallation">
+        </div>
+        <div class="service-info">
+          <h3>Elektroinstallation</h3>
+          <p>Fachgerechte Elektroinstallationen für Privat und Gewerbe.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-image">
+          <img src="demo.png" alt="Netzwerktechnik">
+        </div>
+        <div class="service-info">
+          <h3>Netzwerktechnik</h3>
+          <p>Planung und Installation moderner Netzwerklösungen.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-image">
+          <img src="demo.png" alt="Beleuchtungssysteme">
+        </div>
+        <div class="service-info">
+          <h3>Beleuchtungssysteme</h3>
+          <p>Energieeffiziente Beleuchtungskonzepte für Innen- und Außenbereiche.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-image">
+          <img src="demo.png" alt="Glasfaser Einblasen">
+        </div>
+        <div class="service-info">
+          <h3>Glasfaser-Einblasen</h3>
+          <p>Professionelles Einblasen von Glasfaserkabeln in Rohre.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-image">
+          <img src="demo.png" alt="Glasfaser Spleißen">
+        </div>
+        <div class="service-info">
+          <h3>Glasfaser-Spleißen</h3>
+          <p>Präzises Spleißen und Messen von Glasfaserkabeln.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-image">
+          <img src="demo.png" alt="APL Montage">
+        </div>
+        <div class="service-info">
+          <h3>APL-Montage</h3>
+          <p>Fachgerechte Montage und Dokumentation von APLs.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-image">
+          <img src="demo.png" alt="NVT Einrichtung">
+        </div>
+        <div class="service-info">
+          <h3>NVT-Einrichtung</h3>
+          <p>Konfiguration und Installation von Netzverteilertechnik.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-image">
+          <img src="demo.png" alt="Glasfaser Fehlersuche">
+        </div>
+        <div class="service-info">
+          <h3>Glasfaser-Fehlersuche</h3>
+          <p>Schnelle Diagnose und Behebung von Glasfaserstörungen.</p>
+        </div>
+      </div>
+
+    </div>
   </section>
+
+
 
 
   <section id="about" class="container">
@@ -471,63 +257,7 @@
       </div>
     </div>
   </footer>
-
-  <script>
-    // Year
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Theme toggle
-    const themeBtn = document.getElementById('themeToggle');
-    const setTheme = (mode) => { if (mode === 'dark') { document.documentElement.setAttribute('data-theme', 'dark'); } else { document.documentElement.removeAttribute('data-theme'); } localStorage.setItem('theme', mode); };
-    const stored = localStorage.getItem('theme'); if (stored) setTheme(stored);
-    themeBtn.addEventListener('click', () => { const dark = document.documentElement.getAttribute('data-theme') === 'dark'; setTheme(dark ? 'light' : 'dark'); });
-
-    // Mobile menu
-    const burger = document.getElementById('hamburger');
-    const mobileMenu = document.getElementById('mobile-menu');
-    burger.addEventListener('click', () => {
-      const open = !mobileMenu.hasAttribute('hidden');
-      if (open) { mobileMenu.setAttribute('hidden', ''); burger.setAttribute('aria-expanded', 'false'); }
-      else { mobileMenu.removeAttribute('hidden'); burger.setAttribute('aria-expanded', 'true'); }
-    });
-    mobileMenu.querySelectorAll('[data-close]').forEach(a => a.addEventListener('click', () => {
-      mobileMenu.setAttribute('hidden', ''); burger.setAttribute('aria-expanded', 'false');
-    }));
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !mobileMenu.hasAttribute('hidden')) {
-        mobileMenu.setAttribute('hidden', ''); burger.setAttribute('aria-expanded', 'false');
-      }
-    });
-
-    // Scrollspy (safe if a section is missing)
-    const links = Array.from(document.querySelectorAll('.nav-links a'));
-    const sections = links.map(a => document.querySelector(a.getAttribute('href')));
-    const spy = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          links.forEach(l => l.classList.remove('active'));
-          const idx = sections.indexOf(entry.target);
-          if (links[idx]) links[idx].classList.add('active');
-        }
-      });
-    }, { rootMargin: '-55% 0px -40% 0px', threshold: 0 });
-    sections.forEach(s => s && spy.observe(s));
-
-    // Reveal on scroll
-    const reveals = document.querySelectorAll('.reveal');
-    const revealObs = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); revealObs.unobserve(e.target); } });
-    }, { threshold: .1 });
-    reveals.forEach(el => revealObs.observe(el));
-
-    // Ticker (reduced-motion aware)
-    (function () {
-      const items = Array.from(document.querySelectorAll('.ticker span'));
-      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-      if (reduce || items.length === 0) return;
-      let i = 0; setInterval(() => { items[i].classList.remove('is-active'); i = (i + 1) % items.length; items[i].classList.add('is-active'); }, 1600);
-    })();
-  </script>
+  <script src="js/main.js"></script>
 </body>
 
 </html>
