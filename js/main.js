@@ -70,15 +70,3 @@ const revealObs = new IntersectionObserver((entries) => {
 }, { threshold: .1 });
 reveals.forEach(el => revealObs.observe(el));
 
-// Ticker
-(function () {
-    const items = Array.from(document.querySelectorAll('.ticker span'));
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (reduce || items.length === 0) return;
-    let i = 0;
-    setInterval(() => {
-        items[i].classList.remove('is-active');
-        i = (i + 1) % items.length;
-        items[i].classList.add('is-active');
-    }, 1600);
-})();

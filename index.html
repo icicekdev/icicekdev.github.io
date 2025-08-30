@@ -16,11 +16,13 @@
   <header>
     <div class="container nav">
       <a href="#home" class="brand" aria-label="Elektrofaser Home">
-        <svg viewBox="0 0 48 48" class="logo" aria-hidden="true">
+        <!-- <svg viewBox="0 0 48 48" class="logo" aria-hidden="true">
           <rect width="48" height="48" rx="10" ry="10" fill="#0ea5e9" />
           <path d="M11 28l9-16 3 8h14L26 37l-3-9H11z" fill="#fff" />
         </svg>
-        <span>Elektrofaser</span>
+        <span>Elektrofaser</span> -->
+        <img style="height:48px;" src="assets/image/hero-logo-nb-cropped.png" alt="Elektrofaser Logo" class="hero-logo">
+
       </a>
       <nav aria-label="Primary">
         <div class="nav-links" role="menubar">
@@ -59,23 +61,18 @@
 
   <main id="home" class="container hero">
     <div>
-      <h1 class="reveal">Elektrofaser</h1>
+
+      <p>
+        <span class="elektroText" style="display: inline-block;">Elektro</span>
+        <span class="faserText" style="display: inline-block; margin-left: -10px;">faser</span>
+      </p>
+
+      <img src="assets/image/hero-logo-nb-cropped.png" alt="Elektrofaser Logo" class="hero-logo">
+
       <p class="reveal" style="transition-delay:.05s">Elektro‑ &amp; Glasfaser‑Dienstleistungen für Darmstadt und Hessen
         (bis 100 km) – zuverlässig &amp; termintreu.</p>
-      <div class="ticker reveal" aria-label="Leistungen" style="transition-delay:.1s">
-        <!-- <span class="is-active">Elektroinstallation</span>
-        <span>Netzwerktechnik</span>
-        <span>Beleuchtungssysteme</span>
-        <span>Glasfaser‑Einblasen</span>
-        <span>Glasfaser‑Spleißen</span>
-        <span>APL‑Montage</span>
-        <span>NVT‑Einrichtung</span>
-        <span>Glasfaser‑Fehlersuche</span>
-        <span>Gleichrichter‑Prüfung</span>
-        <span>Elektrogeräte‑Prüfung</span> -->
-      </div>
-      <div style="margin-top:1rem; display:flex; gap:.6rem; flex-wrap:wrap;" class="reveal"
-        style="transition-delay:.15s">
+
+      <div class="hero-button-container" class="reveal" style="transition-delay:.15s">
         <a class="btn btn-primary" href="#contact">Kontakt aufnehmen</a>
         <a class="btn btn-ghost" href="#services">Leistungen &amp; Info</a>
       </div>
@@ -95,7 +92,7 @@
 
       <div class="service-card reveal">
         <div class="service-image">
-          <img src="demo.png" alt="Elektroinstallation">
+          <img src="assets/image/1-Elektroinstallation.png" alt="Elektroinstallation">
         </div>
         <div class="service-info">
           <h3>Elektroinstallation</h3>
@@ -105,7 +102,7 @@
 
       <div class="service-card reveal">
         <div class="service-image">
-          <img src="demo.png" alt="Netzwerktechnik">
+          <img src="assets/image/2-Netzwerktechnik.png" alt="Netzwerktechnik">
         </div>
         <div class="service-info">
           <h3>Netzwerktechnik</h3>
@@ -115,7 +112,7 @@
 
       <div class="service-card reveal">
         <div class="service-image">
-          <img src="demo.png" alt="Beleuchtungssysteme">
+          <img src="assets/image/3-Beleuchtungssystem.png" alt="Beleuchtungssysteme">
         </div>
         <div class="service-info">
           <h3>Beleuchtungssysteme</h3>
@@ -125,7 +122,7 @@
 
       <div class="service-card reveal">
         <div class="service-image">
-          <img src="demo.png" alt="Glasfaser Einblasen">
+          <img src="assets/image/4-Glasfaser Einblasen.png" alt="Glasfaser Einblasen">
         </div>
         <div class="service-info">
           <h3>Glasfaser-Einblasen</h3>
@@ -135,7 +132,7 @@
 
       <div class="service-card reveal">
         <div class="service-image">
-          <img src="demo.png" alt="Glasfaser Spleißen">
+          <img style="transform: scaleX(-1);" src="assets/image/5-Glasfaser Spleiß.png" alt="Glasfaser Spleißen">
         </div>
         <div class="service-info">
           <h3>Glasfaser-Spleißen</h3>
@@ -145,7 +142,7 @@
 
       <div class="service-card reveal">
         <div class="service-image">
-          <img src="demo.png" alt="APL Montage">
+          <img style="transform: scaleX(-1);" src="assets/image/6-APL Montage.png" alt="APL Montage">
         </div>
         <div class="service-info">
           <h3>APL-Montage</h3>
@@ -155,7 +152,7 @@
 
       <div class="service-card reveal">
         <div class="service-image">
-          <img src="demo.png" alt="NVT Einrichtung">
+          <img src="assets/image/7-NVT Einrichtung.png" alt="NVT Einrichtung">
         </div>
         <div class="service-info">
           <h3>NVT-Einrichtung</h3>
@@ -165,11 +162,33 @@
 
       <div class="service-card reveal">
         <div class="service-image">
-          <img src="demo.png" alt="Glasfaser Fehlersuche">
+          <img style="transform: scaleX(-1);" src="assets/image/8-Glasfaser Fehler Suchen.png"
+            alt="Glasfaser Fehlersuche">
         </div>
         <div class="service-info">
           <h3>Glasfaser-Fehlersuche</h3>
           <p>Schnelle Diagnose und Behebung von Glasfaserstörungen.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-image">
+          <img style="transform: scaleX(-1);" src="assets/image/9-Gleichrichter Prüfung.png"
+            alt="Glasfaser Fehlersuche">
+        </div>
+        <div class="service-info">
+          <h3>Gleichrichter-Prüfung</h3>
+          <p>Schnelle Diagnose und Behebung von Glasfaserstörungen.</p>
+        </div>
+      </div>
+
+      <div class="service-card reveal">
+        <div class="service-image">
+          <img src="assets/image/10-Electrical Device Testing.png" alt="Glasfaser Fehlersuche">
+        </div>
+        <div class="service-info">
+          <h3>Elektrogerät-Prüfung</h3>
+          <p>Fachgerechte Prüfung elektrischer Geräte nach aktuellen Sicherheitsstandards.</p>
         </div>
       </div>
 
