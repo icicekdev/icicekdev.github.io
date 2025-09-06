@@ -87,7 +87,23 @@ img {
 section {
     padding: var(--space-xl) 0;
     background: var(--bg);
+    padding-top: 120px !important;
 }
+
+.mb-2 {
+    margin-bottom: 20px;
+}
+
+.mb-3 {
+    margin-bottom: 30px;
+}
+
+@media (max-width: 900px) {
+    section {
+        padding-top: 120px !important;
+    }
+}
+
 
 h1,
 h2 {
@@ -105,7 +121,7 @@ h2 {
 }
 
 p {
-    color: var(--muted);
+    color: var(--text);
 }
 
 .btn {
@@ -140,12 +156,22 @@ p {
 }
 
 header {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
-    z-index: 50;
+    z-index: 9999;
     backdrop-filter: saturate(120%) blur(8px);
     background: color-mix(in oklab, var(--bg) 92%, transparent);
-    border-bottom: 1px solid var(--border);
+    border-bottom: 4px double var(--border);
+}
+
+header {
+    min-height: 80px;
+    /* or use min-height */
+}
+
+main.hero {
+    padding-top: var(--header-height, 64px);
 }
 
 [data-theme="dark"] header svg {
@@ -158,6 +184,7 @@ header {
     justify-content: space-between;
     gap: .5rem;
     padding: .6rem 0;
+    height: 90px;
 }
 
 .brand {
@@ -229,6 +256,7 @@ header {
     padding: .7rem .8rem;
     border-radius: 12px;
     text-decoration: none;
+    color: var(--text);
 }
 
 /* show hamburger on small screens; hide inline nav; show mobile menu when not [hidden] */
@@ -257,7 +285,8 @@ header {
 /* HERO CONTAINER */
 .hero {
     position: relative;
-    height: calc(100vh - 50px);
+    z-index: 1;
+    min-height: calc(100vh - 50px);
     /* full viewport height */
     width: 100%;
     /* background: #a5cfda; #b9dff3 */
@@ -310,7 +339,6 @@ header {
     text-shadow: 0 0 80px rgba(255, 255, 255, .5);
 
     /* Clip Background Image */
-    background: url('../assets/image/animated-text-fill-blue.png') repeat-y;
     -webkit-background-clip: text;
     background-clip: text;
 
@@ -324,11 +352,80 @@ header {
     backface-visibility: hidden;
 }
 
+
+/* default: smallest */
+.hero p span {
+    background-image: url('../assets/image/animated-text-fill-blue-black-384w.webp');
+    background-repeat: repeat-y;
+    background-size: auto;
+    /* or exact to match stripe scale */
+}
+
+[data-theme="dark"] .hero p span {
+    background-image: url('../assets/image/animated-text-fill-blue-384w.webp');
+}
+
+/* medium phones / small tablets */
+@media (min-width: 481px) {
+    .hero p span {
+        background-image: url('../assets/image/animated-text-fill-blue-black-506w.webp');
+    }
+
+    [data-theme="dark"] .hero p span {
+        background-image: url('../assets/image/animated-text-fill-blue-506w.webp');
+    }
+}
+
+/* larger phones / tablets */
+@media (min-width: 769px) {
+    .hero p span {
+        background-image: url('../assets/image/animated-text-fill-blue-black-768w.webp');
+    }
+
+    [data-theme="dark"] .hero p span {
+        background-image: url('../assets/image/animated-text-fill-blue-768w.webp');
+    }
+}
+
+/* fallback for older browsers */
+@supports not (background-image: url("../assets/image/animated-text-fill-blue-black-384w.webp")) {
+    .hero p span {
+        background-image: url('../assets/image/animated-text-fill-blue-black.png');
+    }
+
+    [data-theme="dark"] .hero p span {
+        background-image: url('../assets/image/animated-text-fill-blue.png');
+    }
+}
+
+/* polite to data-savers */
+@media (prefers-reduced-data: reduce) {
+
+    .hero p span,
+    [data-theme="dark"] .hero p span {
+        background: #000;
+        /* or switch to the gradient from section #1 */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 .faserText {
     animation: aitf 40s linear infinite reverse;
 }
 
 .elektroText {
+    border-top: 0px;
     animation: aitf 40s linear infinite normal;
 }
 
